@@ -78,6 +78,12 @@ public class WeatherApiRestController {
        return weatherService.getCityNameAndTemp(cityName);
     }
 
+    //removable code
+    @GetMapping("/temp/3/{cityName}")
+    public List<Weather> getTheTempByCity(@PathVariable(name = "cityName")String cityName){
+        return weatherService.getWeather(cityName);
+    }
+
     @ExceptionHandler({MethodArgumentTypeMismatchException.class, NoSuchElementException.class})
     public ResponseEntity handleExceptions() {
         return ResponseEntity.notFound().build();
