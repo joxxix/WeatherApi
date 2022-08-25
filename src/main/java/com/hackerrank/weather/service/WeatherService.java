@@ -50,6 +50,20 @@ public class WeatherService {
         return finalWeathers;
     }
 
+    //removable code
+    public List<Weather> getWeather(String ciyName) {
+        log.info("Searched for a weather with date: {}", ciyName);
+        List<Weather> weathers = weatherRepository.findAll();
+
+       weathers.forEach(w-> {
+           if (ciyName.equalsIgnoreCase(w.getCity())){
+               weathers.add(w);
+           }
+       });
+
+        return weathers;
+    }
+
     public Weather getWeather(Integer id, HttpServletRequest request, HttpServletResponse response) {
         log.info("Searched for a weather by id: {}", id);
 

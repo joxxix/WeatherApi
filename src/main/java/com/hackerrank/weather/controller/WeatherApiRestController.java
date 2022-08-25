@@ -18,8 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-;
-
 @RestController
 @RequestMapping(path = "/weather")
 public class WeatherApiRestController {
@@ -87,15 +85,12 @@ public class WeatherApiRestController {
         return weatherService.getCityNameAndTemp(cityName);
     }
 
-<<<<<<< Updated upstream
-=======
     //removable code
     @GetMapping("/temp/3/{cityName}")
     public List<Weather> getTheTempByCity(@PathVariable(name = "cityName") String cityName) {
         return weatherService.getWeather(cityName);
     }
 
->>>>>>> Stashed changes
     @ExceptionHandler({MethodArgumentTypeMismatchException.class, NoSuchElementException.class})
     public ResponseEntity handleExceptions() {
         return ResponseEntity.notFound().build();
