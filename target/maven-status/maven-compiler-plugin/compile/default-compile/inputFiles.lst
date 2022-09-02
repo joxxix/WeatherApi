@@ -1,6 +1,8 @@
 D:\Programming\projects\WeatherApi\WeatherApi\src\main\java\com\hackerrank\weather\controller\WeatherApiRestController.java
 D:\Programming\projects\WeatherApi\WeatherApi\src\main\java\com\hackerrank\weather\repository\WeatherRepository.java
 D:\Programming\projects\WeatherApi\WeatherApi\src\main\java\com\hackerrank\weather\config\WeatherConfig.java
+D:\Programming\projects\WeatherApi\WeatherApi\src\main\java\com\hackerrank\weather\resource\WeatherCityAndTempResponse.java
+D:\Programming\projects\WeatherApi\WeatherApi\src\main\java\com\hackerrank\weather\config\SpringFoxConfig.java
 D:\Programming\projects\WeatherApi\WeatherApi\src\main\java\com\hackerrank\weather\resource\WeatherRequest.java
 D:\Programming\projects\WeatherApi\WeatherApi\src\main\java\com\hackerrank\weather\resource\WeatherMapper.java
 D:\Programming\projects\WeatherApi\WeatherApi\src\main\java\com\hackerrank\weather\Application.java

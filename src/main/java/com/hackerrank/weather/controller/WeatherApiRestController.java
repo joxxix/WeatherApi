@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.NoSuchElementException;;
 
 @RestController
-@RequestMapping(path = "/weather")
+@RequestMapping("/weather")
 public class WeatherApiRestController {
     private final WeatherService weatherService;
 
@@ -27,7 +27,7 @@ public class WeatherApiRestController {
         this.weatherService = weatherService;
     }
 
-    @GetMapping(path = "/today")
+    @GetMapping("/today")
     public List<Weather> getWeather() {
         return weatherService.getWeather();
     }
@@ -42,7 +42,7 @@ public class WeatherApiRestController {
         return weatherService.getWeatherByCityName(cityName);
     }
 
-    @PostMapping
+    @PostMapping("/weather")
     public void addWeather(@Valid @RequestBody WeatherRequest weather) {
         weatherService.addWeather(weather);
     }
