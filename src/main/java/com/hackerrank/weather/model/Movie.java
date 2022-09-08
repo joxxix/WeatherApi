@@ -14,47 +14,39 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Movie {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @JsonAlias("adult")
     private boolean adult;
 
     @JsonAlias("backdrop_path")
     private String backdropPath;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "movies_collections_id", referencedColumnName = "id")
-    @JsonAlias("belongs_to_collection")
     private MovieCollection belongsToCollection;
 
-    @JsonAlias("budget")
     private String budget;
 
-    @ElementCollection
-    @JsonAlias("genres")
+    @OneToMany(cascade = CascadeType.MERGE)
     private List<Genre> genres;
 
-    @JsonAlias("homepage")
     private String homepage;
 
-    @JsonAlias("imdb_id")
     private String ImdbId;
 
-    @JsonAlias("original_language")
+    private Integer tmdbId;
+
     private String originalLanguage;
 
-    @JsonAlias("original_title")
     private String originalTitle;
 
-    @JsonAlias("overview")
-    @Column(length = 1000)
-    private String overview;
+//    @Column(length = 1000)
+//    private String overview;
 
-    @JsonAlias("popularity")
     private Integer popularity;
 
-    @JsonAlias("poster_path")
     private String posterPath;
 }

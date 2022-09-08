@@ -5,7 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "movies_collections")
@@ -16,8 +18,9 @@ import javax.persistence.*;
 //This is just the data we need for the Movie class.
 public class MovieCollection {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     @JsonAlias("name")
     private String name;
 
@@ -26,4 +29,5 @@ public class MovieCollection {
 
     @JsonAlias("backdrop_path")
     private String backdropPath;
+
 }

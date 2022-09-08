@@ -1,15 +1,15 @@
 package com.hackerrank.weather.config;
 
-import com.hackerrank.weather.model.Genre;
-import com.hackerrank.weather.model.GenresWrapperClass;
-import com.hackerrank.weather.repository.GenreRepository;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.Bean;
+//import com.hackerrank.weather.model.Genre;
+//import com.hackerrank.weather.model.GenresWrapperClass;
+//import com.hackerrank.weather.repository.GenreRepository;
+//import org.springframework.beans.factory.annotation.Value;
+//import org.springframework.boot.CommandLineRunner;
+//import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.client.RestTemplate;
-
-import java.util.List;
+//import org.springframework.web.client.RestTemplate;
+//
+//import java.util.List;
 
 @Configuration
 public class GenreConfig {
@@ -59,19 +59,19 @@ public class GenreConfig {
 //            ));
 //        };
 //    }
-    @Value("${api.key}")
-    String apiKey;
-
-    @Bean
-    CommandLineRunner commandLineRunner(GenreRepository genreRepository){
-        return args -> {
-            RestTemplate restTemplate = new RestTemplate();
-            String url = "https://api.themoviedb.org/3/genre/movie/list?api_key=" + apiKey;
-
-            GenresWrapperClass genres = restTemplate.getForObject(url, GenresWrapperClass.class);
-
-            List<Genre> genreList = genres.getGenres();
-            genreRepository.saveAll(genreList);
-        };
-    }
+//    @Value("${api.key}")
+//    String apiKey;
+//
+//    @Bean
+//    CommandLineRunner commandLineRunner(GenreRepository genreRepository){
+//        return args -> {
+//            RestTemplate restTemplate = new RestTemplate();
+//            String url = "https://api.themoviedb.org/3/genre/movie/list?api_key=" + apiKey;
+//
+//            GenresWrapperClass genres = restTemplate.getForObject(url, GenresWrapperClass.class);
+//
+//            List<Genre> genreList = genres.getGenres();
+//            genreRepository.saveAll(genreList);
+//        };
+//    }
 }
