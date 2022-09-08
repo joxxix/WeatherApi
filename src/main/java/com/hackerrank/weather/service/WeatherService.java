@@ -34,6 +34,9 @@ public class WeatherService {
         return weatherRepository.findAll();
     }
 
+    //needs to be reworked with:
+    //@RequestParam(date = "date", default = "today's date") Date date
+    //input in the uls is = to "/weather?date=2019-02-02"
     public List<Weather> getWeather(LocalDate date) {
         log.info("Searched for a weather with date: {}", date);
         List<Weather> weathers = weatherRepository.findAll();
@@ -48,6 +51,20 @@ public class WeatherService {
 
 
         return finalWeathers;
+    }
+
+    //removable code
+    public List<Weather> getWeather(String ciyName) {
+        log.info("Searched for a weather with date: {}", ciyName);
+        List<Weather> weathers = weatherRepository.findAll();
+
+       weathers.forEach(w-> {
+           if (ciyName.equalsIgnoreCase(w.getCity())){
+               weathers.add(w);
+           }
+       });
+
+        return weathers;
     }
 
     public Weather getWeather(Integer id, HttpServletRequest request, HttpServletResponse response) {
